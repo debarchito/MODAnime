@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900;
+  -webkit-app-region: drag;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.drag {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.layout\:titlebar {
+  @apply flex flex-row bg-gray-800 text-gray-200 p-1 fixed;
+  &-icon {
+    cursor: pointer;
+    margin: 0.25em 0.125em 0.25em 0.22em;
+    height: 0.82em;
+    width: 0.82em;
+  }
+}
+
+.layout\:view {
+  @apply flex flex-row;
+  height: 96.4vh;
+}
+
+.layout\:sidebar {
+  @apply flex flex-col justify-between items-center w-16 p-6 bg-gray-800;
+  &-container {
+    @apply flex flex-col space-y-10 text-gray-400;
+    & > * {
+      cursor: pointer;
+    }
+  }
+}
+
+.layout\:slot {
+  @apply flex-auto bg-gray-900 pt-4 pl-12 text-gray-400;
+}

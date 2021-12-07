@@ -1,0 +1,7 @@
+**/.DS_Store
+**/node_modules/
+**/dist/
+frontend/.svelte-kit/
+frontend/build/
+frontend/package/
+pnpm-lock.yaml

@@ -1,0 +1,57 @@
+{
+  "name": "modanime",
+  "version": "1.0.0",
+  "description": "An all-in-one package for all you anime needs!",
+  "main": "electron/dist/index.js",
+  "scripts": {
+    "dev:svelte-kit": "cd frontend && svelte-kit dev --port 40072",
+    "build:svelte-kit": "cd frontend && cross-env NODE_ENV=production svelte-kit build",
+    "start:svelte-kit": "cd frontend && cross-env PORT=40072 node dist/index.js",
+    "build:electron": "cd electron && tsc",
+    "dev": "concurrently \"pnpm dev:svelte-kit\" \"electron .\"",
+    "build": "pnpm build:svelte-kit && pnpm build:electron",
+    "start": "cross-env NODE_ENV=production electron .",
+    "lint": "eslint . --ext .ts,.svelte",
+    "lint:fix": "eslint . --ext .ts,.svelte --fix",
+    "format": "prettier -c .",
+    "format:write": "prettier -w ."
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^1.0.0-next.55",
+    "@sveltejs/kit": "^1.0.0-next.201",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "concurrently": "^6.4.0",
+    "cssnano": "^5.0.12",
+    "electron": "^16.0.4",
+    "eslint": "^8.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "postcss": "^8.4.4",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "svelte": "^3.44.2",
+    "svelte-preprocess": "^4.9.8",
+    "tailwindcss": "^3.0.0-alpha.2",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/debarchito/MODAnime.git"
+  },
+  "keywords": [
+    "anime",
+    "MODAnime"
+  ],
+  "author": "Debarchito Nath",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/debarchito/MODAnime/issues"
+  },
+  "homepage": "https://github.com/debarchito/MODAnime#readme"
+}
